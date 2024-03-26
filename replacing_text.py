@@ -1,26 +1,18 @@
-import sys
-import os 
-
-if(len(sys.argv)<2):
-    print("Error: No ha ingresado el nombre del archivo: py main.py ejemplo.txt")
-    exit()
-
-ruta_archivo = "input/"+sys.argv[1]
-archivo = open(ruta_archivo, 'r', encoding="UTF-8")
-
-
-def replacing_substring(content, s_find, s_replace):
-    index = content.lower().find(s_find.lower())
-    new_content = content[:index] + s_replace + content[index+len(s_find):]
-    return new_content
-    
-def replacing_substring_cs(content, s_find, s_replace):
-    content.replace(s_find, s_replace)
-    return content
-
 def save_edit(text, filename):
     with open(filename, 'w', encoding="UTF-8") as file_text:
         file_text.write(text)
 
+def replacing_substring(content, filename, s_find, s_replace):
+    index = content.lower().find(s_find.lower())
+    new_content = content[:index] + s_replace + content[index+len(s_find):]
+    save_edit(new_content, filename)
+    return True
 
-save_edit(replacing_substring(archivo.read(), "sureste de Hampden", "noreste de Chile"), ruta_archivo)
+def check_if_exist(content, s_find, case_sensitive):
+    if(case_sensitive):
+        index = content.find(s_find)
+    else:
+        index = content.lower().find(s_find.lower())
+    if(index == -1):
+        return False
+    return True
