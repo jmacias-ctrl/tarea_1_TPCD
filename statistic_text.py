@@ -20,24 +20,6 @@ def words_paragraph_total(content):
         set_words.update(words)
     return len(text), count, len(set_words)
 
-t_paragraphs, t_words, t_words_unique = words_paragraph_total(archivo.read())
-print(t_paragraphs, t_words, t_words_unique)
-#contenido = archivo.read().splitlines()
-#texto = [x for x in contenido if x]
-
-
-#count = 0
-#set_palabras = set()
-#for string in texto:
-#    palabras = string.split()
-#    count += len(palabras)
-#    set_palabras.update(palabras)
-
-#print(len(texto))
-#print(count)
-#print(len(set_palabras))
-
-
 
         
     

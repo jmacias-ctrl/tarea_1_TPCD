@@ -17,5 +17,10 @@ def replacing_substring(content, s_find, s_replace):
 def replacing_substring_cs(content, s_find, s_replace):
     content.replace(s_find, s_replace)
     return content
-    
-print(replacing_substring(archivo.read(), "sureste de Hampden", "noreste de Chile"))
+
+def save_edit(text, filename):
+    with open(filename, 'w', encoding="UTF-8") as file_text:
+        file_text.write(text)
+
+
+save_edit(replacing_substring(archivo.read(), "sureste de Hampden", "noreste de Chile"), ruta_archivo)
