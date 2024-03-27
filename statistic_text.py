@@ -1,5 +1,5 @@
 def wpc_total(content):
-    text_paragraphs = [x for x in content.splitlines() if x]
+    text = [x for x in content.splitlines() if x]
     count = 0
     total_char = 0
     total_char_b = 0
